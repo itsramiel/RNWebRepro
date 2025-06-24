@@ -10,8 +10,6 @@ import WebView from 'react-native-webview';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
-  const now = performance.now();
-  console.log('now', now);
 
   return (
     <View style={styles.container}>
