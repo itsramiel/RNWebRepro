@@ -5,16 +5,21 @@
  * @format
  */
 
-import { NewAppScreen } from '@react-native/new-app-screen';
 import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import WebView from 'react-native-webview';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
+  const now = performance.now();
+  console.log('now', now);
 
   return (
     <View style={styles.container}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
+      <WebView
+        source={{ uri: 'https://reactnative.dev/' }}
+        style={{ flex: 1 }}
+      />
     </View>
   );
 }
